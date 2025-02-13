@@ -1,0 +1,12 @@
+https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&country=all&protocol=https&proxy_format=ipport&format=text&timeout=7000
+https://free-proxy-list.net/
+https://www.us-proxy.org/
+https://free-proxy-list.net/uk-proxy.html
+https://www.sslproxies.org/
+https://free-proxy-list.net/anonymous-proxy.html
+https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=7000&country=all&ssl=all&anonymity=all
+https://api.proxyscrape.com/v2/?request=displayproxies&protocol=https&timeout=7000&country=all&ssl=all&anonymity=all
+https://raw.githubusercontent.com/themiralay/Proxy-List-World/master/data.txt
+https://raw.githubusercontent.com/TheSpeedX/SOCKS-List/master/http.txt
+https://proxyspace.pro/http.txt
+http://193.200.78.26:8000/http?key=free
