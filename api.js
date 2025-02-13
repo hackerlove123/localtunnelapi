@@ -134,22 +134,28 @@ app.listen(port, async () => {
     console.error("Lỗi khi gửi tin nhắn Telegram:", err)
   );
 
-  // Lấy mật khẩu (nếu có) bằng cách sử dụng curl
+  // Lấy mật khẩu bằng lệnh curl
   const getPassword = async () => {
     try {
-      const response = await axios.get(tunnel.url);
-      const passwordMatch = response.data.match(/Password: (\w+)/);
-      if (passwordMatch && passwordMatch[1]) {
-        const password = passwordMatch[1];
+      const response = await axios.get("https://loca.lt/mytunnelpassword");
+      const password = response.data.trim(); // Lấy nội dung phản hồi và loại bỏ khoảng trắng thừa
+
+      if (password && password !== "Hiện tại chưa có mật khẩu") {
         console.log(`Mật khẩu Localtunnel: ${password}`);
         sendTelegramMessage(`🔐 Mật khẩu Localtunnel: ${password}`).catch((err) =>
           console.error("Lỗi khi gửi tin nhắn Telegram:", err)
         );
       } else {
-        console.log("Không tìm thấy mật khẩu.");
+        console.log("Hiện tại chưa có mật khẩu.");
+        sendTelegramMessage("🔐 Hiện tại chưa có mật khẩu.").catch((err) =>
+          console.error("Lỗi khi gửi tin nhắn Telegram:", err)
+        );
       }
     } catch (error) {
       console.error("Lỗi khi lấy mật khẩu:", error.message);
+      sendTelegramMessage("🔴 Lỗi khi lấy mật khẩu từ Localtunnel.").catch((err) =>
+        console.error("Lỗi khi gửi tin nhắn Telegram:", err)
+      );
     }
   };
 
