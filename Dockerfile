@@ -11,8 +11,8 @@ RUN apt-get update -y && \
     pip3 install requests python-telegram-bot pytz --break-system-packages && \
     npm install -g npm@latest && \
     npm install -g hpack https commander colors socks axios express && \
-    npm install -g cloudflared && \
-    npm install cloudflared && \
+    npm install -g localtunnel && \
+    npm install localtunnel && \
     npm install hpack https commander colors socks axios express && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
