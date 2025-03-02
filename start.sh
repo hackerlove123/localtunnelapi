@@ -4,12 +4,6 @@
 node api.js &
 
 # Đợi 3 giây
-sleep 14
-
-# Chạy ok.js trong nền
-node ok.js &
-
-# Đợi 3 giây
 sleep 7
 
 # Chạy prxscan.py trong nền
